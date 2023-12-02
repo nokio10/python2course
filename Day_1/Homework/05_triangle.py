@@ -7,19 +7,28 @@ class Point:
         self.y = y
 
     def distance(self: Point, other_point: Point) -> float:
-        pass
+        return ((self.x - other_point.x)**2 + (self.y - other_point.y)**2)**0.5
 
 
 class Triangle:
     def __init__(self, p1, p2, p3):
-        pass
+        self.p1 = p1
+        self.p2 = p2
+        self.p3 = p3
 
     def perimeter(self):
-        pass
+        side1 = self.p1.distance(self.p2)
+        side2 = self.p2.distance(self.p3)
+        side3 = self.p3.distance(self.p1)
+        return side1 + side2 + side3
 
     def area(self):
-        # Для нахождения площади, используйте формулу Герона
-        pass
+        a = self.p1.distance(self.p2)
+        b = self.p2.distance(self.p3)
+        c = self.p3.distance(self.p1)
+        s = (a + b + c) / 2
+        return (s * (s - a) * (s - b) * (s - c)) ** 0.5
+
 
 
 
