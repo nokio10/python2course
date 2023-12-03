@@ -1,6 +1,6 @@
 # Задание-1: доработайте конструктор class Point для хранения цвета точки
 class Point:
-    def __init__(self, x, y, color):
+    def __init__(self, x, y, color="undefined"):
         self.x = x
         self.y = y
         self.color = color
@@ -10,8 +10,8 @@ class Point:
 
 
 # пример работы метода
-p1 = Point(4, 4, "red")
-p2 = Point(3, 3, "red")
+p1 = Point(4, 4)
+p2 = Point(3, 3)
 
 result = p1.distance(p2)
 print(result)

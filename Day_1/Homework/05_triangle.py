@@ -15,19 +15,16 @@ class Triangle:
         self.p1 = p1
         self.p2 = p2
         self.p3 = p3
-
-    def perimeter(self):
-        side1 = self.p1.distance(self.p2)
-        side2 = self.p2.distance(self.p3)
-        side3 = self.p3.distance(self.p1)
-        return side1 + side2 + side3
+        self.a = p1.distance(self.p2)
+        self.b = p2.distance(self.p3)
+        self.c = p3.distance(self.p1)
+    def perimeter(self: float) -> float:
+        p = self.a + self.b + self.c
+        return p
 
     def area(self):
-        a = self.p1.distance(self.p2)
-        b = self.p2.distance(self.p3)
-        c = self.p3.distance(self.p1)
-        s = (a + b + c) / 2
-        return (s * (s - a) * (s - b) * (s - c)) ** 0.5
+        s = self.perimeter() / 2
+        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
 
 
 
