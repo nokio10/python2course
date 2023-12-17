@@ -130,7 +130,6 @@ class CardGame:
                             player2_turn = False
                             console.print(f"Игроку {player_number(player)} нечего подкидывать")
                             player += 1
-                            continue
                         elif self.table_cards != [] and any(card.value in [player_card.value for player_card in self.player1_hand] for card in self.table_cards):
                             player_input = int(input(f"Игрок {player_number(player)} атакует. Введи индекс карты в руке: "))
                             player1_move = self.player1_hand[player_input - 1]
@@ -179,7 +178,7 @@ class CardGame:
                         player2_turn = False
                         next_round = True
                         player += 1
-                        continue
+
 
             self.draw_to_ten(self.player1_hand)
             self.draw_to_ten(self.player2_hand)
